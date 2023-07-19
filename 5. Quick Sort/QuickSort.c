@@ -12,14 +12,16 @@ int Partition(int arr[],int low,int up){
     int start = low;
     int end = up;
     while(start < end){
-        while(arr[start]<pivot){
+        while(arr[start]<=pivot){
             start++;
         }
         while (arr[end]>pivot){
-            end++;
+            end--;
         }
         if(start<end){
-            swap(&arr[start],&arr[end]);
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
         }     
     }
     swap(&arr[end],&arr[low]);
