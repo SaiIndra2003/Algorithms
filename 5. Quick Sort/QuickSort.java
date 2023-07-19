@@ -9,27 +9,27 @@ public class QuickSort {
 
 
     static int Partition(int[] arr, int low, int high){
-        int pivot = arr[low];
+        int pivot = arr[high];
         int left = low;
         int right = high;
         while(left<right){
             while(left<high && arr[left]<=pivot){
                 left++;
             }
-            while(right>left && arr[right]>pivot){
+            while(right>low && arr[right]>pivot){
                 right--;
             }
-            System.out.println(right + " " + left);
             if(left<right){
                 int temp = arr[left];
                 arr[left] = arr[right];
                 arr[right] = temp;
             }
-        }      
-        // System.out.println(arr[low]+ " " + arr[right]);
+        }
+
         int temp = arr[low];
         arr[low] = arr[right];
         arr[right] = temp;      
+        
         return right;
     }
 
