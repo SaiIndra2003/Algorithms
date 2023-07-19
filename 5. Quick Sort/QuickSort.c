@@ -19,9 +19,7 @@ int Partition(int arr[],int low,int up){
             end--;
         }
         if(start<end){
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
+            swap(&arr[start],&arr[end]);
         }     
     }
     swap(&arr[end],&arr[low]);
